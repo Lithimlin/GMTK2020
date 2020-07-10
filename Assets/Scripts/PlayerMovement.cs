@@ -5,17 +5,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D playerBody;
+    int moveSpeed = 7;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateFacing();
+        Move();
+    }
+
+    private void Move()
+    {
+        playerBody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
     }
 
     void UpdateFacing()
