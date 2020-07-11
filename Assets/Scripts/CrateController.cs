@@ -7,6 +7,8 @@ public class CrateController : MonoBehaviour
 {
     private Collider2D coll;
     private Rigidbody2D rb;
+
+    public float overlap;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class CrateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, coll.bounds.size * 1.05f, transform.eulerAngles.z);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, coll.bounds.size * overlap, transform.eulerAngles.z);
         if ((hits.Length > 0) && hits.Any(e => e.tag == "Br4hms")) 
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
