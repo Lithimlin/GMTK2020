@@ -8,11 +8,13 @@ public class EnemyController : MonoBehaviour
     public int speed;
     public float waitTime;
     public bool turnOnly;
+    public bool fl1pPass;
 
     Rigidbody2D enemyBody;
     private int currentPoint;
     private bool wait;
     private float nextTime;
+
 
     void Start()
     {
@@ -28,6 +30,20 @@ public class EnemyController : MonoBehaviour
         Vector2 faceDir = target - pos;
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
         dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        if (fl1pPass)
+        {
+            GameObject[] passableObjects = GameObject.FindGameObjectsWithTag("Fl1pPass");
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            foreach (GameObject obj in passableObjects)
+            {
+                Collider2D targetB = obj.GetComponent<Collider2D>();
+                Physics2D.IgnoreCollision(playerCollider, targetB, true);
+            }
+
+        }
+
+        
     }
 
     void Update()
