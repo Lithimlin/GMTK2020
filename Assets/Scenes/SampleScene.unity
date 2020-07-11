@@ -321,6 +321,7 @@ MonoBehaviour:
   - {x: 0, y: -2}
   - {x: 2, y: 2}
   moveSpeed: 3
+  waitTime: 1
 --- !u!61 &1245112329
 BoxCollider2D:
   m_ObjectHideFlags: 0
