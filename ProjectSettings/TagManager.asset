@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fl1pPass
+  - Br4hmsPush
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - 
   - 
   - Players
-  - 
-  - 
+  - Obstacles
+  - Phase Walls
   - 
   - 
   - 

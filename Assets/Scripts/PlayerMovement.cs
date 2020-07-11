@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public bool inControl;
 
     Rigidbody2D playerBody;
-    public int moveSpeed = 7;
+    public int moveSpeed = 6;
+    public float idleSpeedFactor = .8f;
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (characterManager.playerMode == inControl)
+        if (characterManager.getActivePlayer() == gameObject)
         {
             UpdateFacing();
             Move();
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveFacing()
     {
-        playerBody.velocity = dirTransform.right * moveSpeed;
+        playerBody.velocity = dirTransform.right * moveSpeed * idleSpeedFactor;
     }
 
     private void UpdateFacing()
