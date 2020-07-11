@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Transform dirTransform;
     public CharacterSwitcher characterManager;
     public bool inControl;
 
     Rigidbody2D playerBody;
-    int moveSpeed = 7;
+    public int moveSpeed = 7;
     
     // Start is called before the first frame update
     void Start()
@@ -37,13 +38,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveFacing()
     {
-        playerBody.velocity = transform.right * moveSpeed;
+        playerBody.velocity = dirTransform.right * moveSpeed;
     }
 
     private void UpdateFacing()
     {
         Vector2 faceDir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

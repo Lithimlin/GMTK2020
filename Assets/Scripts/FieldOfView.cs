@@ -6,6 +6,7 @@ using UnityEngine.SocialPlatforms;
 
 public class FieldOfView : MonoBehaviour
 {
+    public Transform dirTransform;
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
@@ -53,7 +54,7 @@ public class FieldOfView : MonoBehaviour
         {
             Transform target = collider.transform;
             Vector2 dirToTarget = target.position - transform.position;
-            if (Vector2.Angle(transform.right, dirToTarget) < viewAngle / 2)
+            if (Vector2.Angle(dirTransform.right, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector2.Distance(transform.position, target.position);
                 if(!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
@@ -72,7 +73,7 @@ public class FieldOfView : MonoBehaviour
 
         for (int i = 0; i <= rays; i++)
         {
-            float angle = transform.eulerAngles.z - viewAngle / 2 + rayAngle * i;
+            float angle = dirTransform.eulerAngles.z - viewAngle / 2 + rayAngle * i;
             ViewCastInfo vc = ViewCast(angle);
             viewPoints.Add(vc.point);
         }
@@ -84,7 +85,7 @@ public class FieldOfView : MonoBehaviour
         vertices[0] = Vector3.zero;
         for(int i = 0; i < vertexCount-1; i++)
         {
-            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
+            vertices[i + 1] = dirTransform.InverseTransformPoint(viewPoints[i]);
             if (i < vertexCount - 2)
             {
                 int l = triangles.Length-1;
@@ -134,7 +135,7 @@ public class FieldOfView : MonoBehaviour
     {
         if(!angleIsGlobal)
         {
-            angleInDegres += transform.eulerAngles.z;
+            angleInDegres += dirTransform.eulerAngles.z;
         }
         return new Vector2(Mathf.Cos(angleInDegres * Mathf.Deg2Rad), Mathf.Sin(angleInDegres * Mathf.Deg2Rad));
     } 
