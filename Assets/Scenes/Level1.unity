@@ -291,7 +291,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 901839757}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224049708}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 230e792b62631824ca34dbea57feec2c, type: 3}
@@ -557,24 +557,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1616489115}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &224049708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 714399293701540962, guid: 71951b83451385f438082bb9103ab7f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 901839757}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &224049710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224049708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa1481fc1f510a4c90b09f6f7871cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &252939738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1762,16 @@ PrefabInstance:
       propertyPath: cases.Array.data[0]
       value: 
       objectReference: {fileID: 341882463}
+    - target: {fileID: 2078483287653027964, guid: 3a2d02af1ee158e459482bd7a6908e4d,
+        type: 3}
+      propertyPath: nextLevel.m_Handle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078483287653027964, guid: 3a2d02af1ee158e459482bd7a6908e4d,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 2078483287653027965, guid: 3a2d02af1ee158e459482bd7a6908e4d,
         type: 3}
       propertyPath: m_Name
