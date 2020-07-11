@@ -7,32 +7,27 @@ using UnityEngine;
 public class CharacterSwitcher : MonoBehaviour
 {
     public List<GameObject> players;
-    public float time;
+    public float cooldown = 5f;
 
     [HideInInspector]
-    public int activePlayer = 0;
+    private int activePlayer = 0;
+    private float time;
 
     void Start()
     {
-        StartCoroutine(SwitchPlayer());
     }
 
     void Update()
     {
-
+        if (Input.GetKeyDown("space") && Time.time > time)
+        {
+            activePlayer = (activePlayer + 1) % players.Count;
+            time = Time.time + cooldown;
+        }
     }
 
     public GameObject getActivePlayer()
     {
         return players[activePlayer];
-    }
-
-    IEnumerator SwitchPlayer()
-    {
-        while(true)
-        {
-            yield return new WaitForSeconds(time);
-            activePlayer = (activePlayer + 1) % players.Count;
-        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public Transform dirTransform;
     public CharacterSwitcher characterManager;
@@ -11,11 +11,25 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerBody;
     public int moveSpeed = 6;
     public float idleSpeedFactor = .8f;
+    public bool fl1pPass = false;
     
     // Start is called before the first frame update
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
+
+        if (fl1pPass)
+        {
+            GameObject[] passableObjects = GameObject.FindGameObjectsWithTag("Fl1pPass");
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            foreach (GameObject obj in passableObjects)
+            {
+                Collider2D target = obj.GetComponent<Collider2D>();
+                Physics2D.IgnoreCollision(playerCollider, target, true);
+            }
+
+        }
+        
     }
 
     // Update is called once per frame
