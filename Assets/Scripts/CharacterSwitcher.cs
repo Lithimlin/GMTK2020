@@ -13,6 +13,8 @@ public class CharacterSwitcher : MonoBehaviour
     public Text text;
 
     [HideInInspector]
+    public bool firstSwitch = true;
+
     private int activePlayer = 0;
     private float time;
 
@@ -26,6 +28,7 @@ public class CharacterSwitcher : MonoBehaviour
         {
             activePlayer = (activePlayer + 1) % players.Count;
             time = Time.time + cooldown;
+            firstSwitch = false;
         }
 
     }
