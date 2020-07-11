@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (characterManager.getActivePlayer() == gameObject)
+        if (characterManager.GetActivePlayer() == gameObject)
         {
             UpdateFacing();
             Move();
