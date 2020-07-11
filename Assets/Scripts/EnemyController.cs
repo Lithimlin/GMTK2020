@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private bool wait;
     private float nextTime;
 
+
     void Start()
     {
         enemyBody = GetComponent<Rigidbody2D>();
@@ -28,6 +29,7 @@ public class EnemyController : MonoBehaviour
         Vector2 faceDir = target - pos;
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
         dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
     }
 
     void Update()
