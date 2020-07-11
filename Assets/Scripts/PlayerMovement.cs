@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveFacing()
     {
-        playerBody.velocity = transform.rotation * Vector2.right * moveSpeed;
+        playerBody.velocity = transform.right * moveSpeed;
     }
 
     private void UpdateFacing()
