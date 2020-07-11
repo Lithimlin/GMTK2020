@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterSwitcher characterManager;
-    public bool inControllWhen;
+    public bool inControl;
 
     Rigidbody2D playerBody;
     int moveSpeed = 7;
@@ -19,10 +19,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (characterManager.playerMode == inControllWhen)
+        if (characterManager.playerMode == inControl)
         {
             UpdateFacing();
             Move();
+        } 
+        else
+        {
+            MoveFacing();
         }
     }
 
@@ -31,7 +35,12 @@ public class PlayerMovement : MonoBehaviour
         playerBody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed);
     }
 
-    void UpdateFacing()
+    private void MoveFacing()
+    {
+        playerBody.velocity = transform.rotation * Vector2.right * moveSpeed;
+    }
+
+    private void UpdateFacing()
     {
         Vector2 faceDir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;

@@ -1,26 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public List<Vector2> walkPoints;
+    public List<Vector2> waypoints;
     public int moveSpeed;
 
-    Rigidbody2D myBody;
     int currentPoint;
 
     void Start()
     {
-        myBody = GetComponent<Rigidbody2D>();
-        walkPoints[0] = transform.position;
+        waypoints.Insert(0, transform.position);
         currentPoint = 1;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
-        Vector2 targetPos = walkPoints[currentPoint] - currentPos;
-        myBody.velocity = ((targetPos).normalized * moveSpeed);
+        Patrol();
+        Debug.Log(transform.position);
+    }
+
+    private void Patrol()
+    {
+        Vector2 target = waypoints[currentPoint];
+        transform.LookAt(target);
+        transform.position = Vector2.MoveTowards(transform.position, target, .2f);
+        if (transform.position.Equals(target))
+        {
+            currentPoint = (currentPoint + 1) % waypoints.Count;
+        }
     }
 }
