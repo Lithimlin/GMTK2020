@@ -36,7 +36,11 @@ public class FieldOfView : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(delay);
-            FindVisibleTarget();
+            FindVisibleTarget(); 
+            if (visibleTargets.Count > 0)
+            {
+                //GameOver
+            }
         }
     }
 
