@@ -32,7 +32,7 @@ public class CharacterSwitcher : MonoBehaviour
 
     private void LateUpdate()
     {
-        cooldownBar.transform.position = GetActivePlayer().transform.position + Vector3.up * .8f + Vector3.right * .05f;
+        cooldownBar.transform.position = GetActivePlayer().transform.position + Vector3.up * .8f + Vector3.right * .05f + Vector3.forward * 2f;
         int timeLeft = Mathf.RoundToInt(time - Time.time);
         if (timeLeft > 0)
         {
