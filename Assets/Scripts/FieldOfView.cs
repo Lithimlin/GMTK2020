@@ -26,10 +26,6 @@ public class FieldOfView : MonoBehaviour
         uv[1] = vertices[1];
         uv[2] = vertices[1];
 
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;
-
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
