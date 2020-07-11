@@ -44,6 +44,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 faceDir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(-angle, Vector3.back);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
