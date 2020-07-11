@@ -21,8 +21,13 @@ public class EnemyController : MonoBehaviour
         {
             waypoints.Insert(0, transform.position);
         }
-        currentPoint = 1;
+        currentPoint = 0;
         wait = false;
+        Vector2 target = waypoints[currentPoint];
+        Vector2 pos = dirTransform.position;
+        Vector2 faceDir = target - pos;
+        float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
+        dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     void Update()
