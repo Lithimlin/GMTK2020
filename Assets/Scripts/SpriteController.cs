@@ -13,14 +13,20 @@ public class SpriteController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        myAnime = GetComponent<Animator>();
+        if (GetComponent<Animator>() != null)
+        {
+            myAnime = GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        myAnime.SetInteger("Dir", getDirection());
-        myAnime.SetBool("Move", IsMoving());
+        if (myAnime != null)
+        {
+            myAnime.SetInteger("Dir", getDirection());
+            myAnime.SetBool("Move", IsMoving());
+        }
     }
 
     private bool IsMoving()
