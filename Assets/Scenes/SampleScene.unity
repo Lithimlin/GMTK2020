@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0bff19565ad5d45a6778766e0dfade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirTransform: {fileID: 0}
+  dirTransform: {fileID: 1466120788}
 --- !u!1 &1975132783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0bff19565ad5d45a6778766e0dfade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirTransform: {fileID: 0}
+  dirTransform: {fileID: 409607228}
 --- !u!1 &1993307106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   players:
   - {fileID: 1582851757}
   - {fileID: 1975132783}
-  time: 2
+  time: 10
   activePlayer: 0
 --- !u!4 &2013818939
 Transform:
