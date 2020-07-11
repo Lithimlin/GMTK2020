@@ -1,46 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class FieldOfView : MonoBehaviour
 {
-    public int viewLength;
+    public float viewRadius;
+    [Range(0,360)]
+    public float viewAngle;
 
-    void Start()
+    public LayerMask targetMask;
+    public LayerMask obstacleMask;
+
+    public List<Transform> visibleTargets = new List<Transform>();
+
+    private void Start()
     {
-        Mesh mesh = new Mesh();
-
-        Vector3[] vertices = new Vector3[4];
-        Vector2[] uv = new Vector2[4];
-        int[] triangles = new int[6];
-
-        vertices[0] = new Vector3 (0, viewLength);
-        vertices[1] = new Vector3(viewLength, 0);
-        vertices[2] = new Vector3(viewLength, viewLength);
-        vertices[3] = new Vector3(0 , viewLength);
-
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;
-        triangles[3] = 2;
-        triangles[4] = 1;
-        triangles[5] = 3;
-
-        uv[0] = vertices[0];
-        uv[1] = vertices[1];
-        uv[2] = vertices[2];
-        uv[3] = vertices[2];
-
-        mesh.vertices = vertices;
-        mesh.uv = uv;
-        mesh.triangles = triangles;
-
-        GameObject view = new GameObject("View",typeof(MeshFilter), typeof(MeshRenderer));
-        view.GetComponent<MeshFilter>().mesh = mesh;
+        StartCoroutine("FindTargetsWithDelay", .2F);
     }
 
-    void Update()
+    IEnumerator FindTargetsWithDelay(float delay)
     {
-        
+        while(true)
+        {
+            yield return new WaitForSeconds(delay);
+            FindVisibleTarget();
+        }
     }
+
+    void FindVisibleTarget()
+    {
+        visibleTargets.Clear();
+        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        for(int i = 0; i < targetInViewRadius.Length; i++)
+        {
+            Transform target = targetInViewRadius [i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
+            if(Vector3.Angle(transform.forward , dirToTarget) < viewAngle / 2)
+            {
+                float dstToTarget = Vector3.Distance(transform.position, target.position);
+                if(!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask))
+                {
+                    visibleTargets.Add (target);
+                }
+            }
+        }
+    }
+
+
+    public Vector2 DirFromAngle(float angleInDegres, bool angleIsGlobal)
+    {
+        if(!angleIsGlobal)
+        {
+            angleInDegres += transform.eulerAngles.y;
+        }
+        return new Vector2(Mathf.Cos(angleInDegres * Mathf.Deg2Rad), Mathf.Sin(angleInDegres * Mathf.Deg2Rad));
+    } 
 }
