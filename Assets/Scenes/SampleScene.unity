@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 965041917}
   - component: {fileID: 965041919}
   - component: {fileID: 965041918}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Test
   m_TagString: Fl1pPass
   m_Icon: {fileID: 0}
@@ -1208,6 +1208,7 @@ MonoBehaviour:
   inControl: 0
   moveSpeed: 7
   idleSpeedFactor: 0.8
+  fl1pPass: 0
 --- !u!212 &1582851759
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,7 @@ MonoBehaviour:
   inControl: 1
   moveSpeed: 7
   idleSpeedFactor: 0.8
+  fl1pPass: 1
 --- !u!212 &1975132786
 SpriteRenderer:
   m_ObjectHideFlags: 0
