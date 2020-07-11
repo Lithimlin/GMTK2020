@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public CharacterSwitcher characterManager;
+    public bool inControllWhen;
+
     Rigidbody2D playerBody;
     int moveSpeed = 7;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateFacing();
-        Move();
+        if (characterManager.playerMode == inControllWhen)
+        {
+            UpdateFacing();
+            Move();
+        }
     }
 
     private void Move()
