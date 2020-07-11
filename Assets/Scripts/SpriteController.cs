@@ -6,16 +6,21 @@ public class SpriteController : MonoBehaviour
 {
     Rigidbody2D body;
     public Transform dirTransform;
+    private Animator myAnime;
+
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        myAnime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        myAnime.SetInteger("Dir", getDirection());
+        myAnime.SetBool("Move", IsMoving());
     }
 
     private bool IsMoving()
