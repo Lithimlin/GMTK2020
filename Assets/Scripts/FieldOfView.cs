@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -86,9 +87,10 @@ public class FieldOfView : MonoBehaviour
             vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
             if (i < vertexCount - 2)
             {
-                triangles[i * 3] = 0;
-                triangles[i * 3 + 1] = i + 1;
-                triangles[i * 3 + 2] = i + 2;
+                int l = triangles.Length-1;
+                triangles[l-(i * 3)] = 0;
+                triangles[l-(i * 3 + 1)] = i + 1;
+                triangles[l-(i * 3 + 2)] = i + 2;
             }
         }
 

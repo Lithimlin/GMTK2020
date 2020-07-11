@@ -458,8 +458,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   meshResolution: 0.4
-  visibleTargets: []
   viewMeshFilter: {fileID: 1382782937}
+  visibleTargets: []
 --- !u!1 &1382782936
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +552,6 @@ GameObject:
   - component: {fileID: 1582851758}
   - component: {fileID: 1582851761}
   - component: {fileID: 1582851762}
-  - component: {fileID: 1582851763}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -686,29 +685,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1582851763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582851757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fe7212b9fcd784b9b86afcf3a5c7ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 0
-  viewAngle: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 0
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  meshResolution: 0
-  visibleTargets: []
-  viewMeshFilter: {fileID: 0}
 --- !u!1 &1906982527
 GameObject:
   m_ObjectHideFlags: 0
