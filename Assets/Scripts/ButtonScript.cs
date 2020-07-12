@@ -13,10 +13,17 @@ public class ButtonScript : MonoBehaviour
     public bool isButton;
     public GameObject target;
     public LevelManager manager;
+    public AudioClip sound;
+    public GameObject soundCase;
+
+    AudioSource myAudio;
+
+
     private void Start()
     {
         myRender = GetComponent<SpriteRenderer>();
         StartCoroutine("FindTargetsWithDelay", .2F);
+        myAudio = GetComponent<AudioSource>();
     }
 
 
@@ -41,11 +48,16 @@ public class ButtonScript : MonoBehaviour
             {
                 if (isButton)
                 {
+                    if (myRender.sprite.name != pressedSprite.name)
+                    {
+                        myAudio.PlayOneShot(sound);
+                    }
                     myRender.sprite = pressedSprite;
                     Destroy(target.gameObject);
                 }
                 else
                 {
+                    Instantiate(soundCase);
                     manager.cases.Remove(gameObject);
                     Destroy(gameObject);
                 }

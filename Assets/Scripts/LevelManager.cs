@@ -12,9 +12,14 @@ public class LevelManager : MonoBehaviour
 
     private bool dead = false;
 
+    public AudioClip sound;
+
+    AudioSource myAudio;
+
     private void Start()
     {
-        foreach(GameObject casse in cases)
+        myAudio = GetComponent<AudioSource>();
+        foreach (GameObject casse in cases)
         {
             casse.GetComponent<ButtonScript>().manager = this;
         }
@@ -43,6 +48,7 @@ public class LevelManager : MonoBehaviour
         if (!dead)
         {
             Debug.Log("Death...");
+            myAudio.PlayOneShot(sound);
             sceneFader.FadeTo(SceneManager.GetActiveScene().name);
             dead = true;
         }
