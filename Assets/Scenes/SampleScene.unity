@@ -1274,6 +1274,21 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 266218222}
+    - target: {fileID: 714399293701540961, guid: 71951b83451385f438082bb9103ab7f1,
+        type: 3}
+      propertyPath: sceneCam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 714399293701540961, guid: 71951b83451385f438082bb9103ab7f1,
+        type: 3}
+      propertyPath: zoomStrengh
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 714399293701540961, guid: 71951b83451385f438082bb9103ab7f1,
+        type: 3}
+      propertyPath: zoomSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 714399293701540962, guid: 71951b83451385f438082bb9103ab7f1,
         type: 3}
       propertyPath: m_Name
