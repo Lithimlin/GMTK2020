@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingOrder: 8
   m_Sprite: {fileID: 6833624519701456044, guid: cf0137fc39ba5b640b4500264e1029f4,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.495283, b: 0.7847178, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
     m_Bits: 512
   meshResolution: 0.4
   viewMeshFilter: {fileID: 1910414407833422727}
+  manager: {fileID: 0}
   visibleTargets: []
 --- !u!114 &1910414407434662993
 MonoBehaviour:
