@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public SceneFader sceneFader;
     public string nextLevel;
 
+    private bool dead = false;
+
     private void Start()
     {
         foreach(GameObject casse in cases)
@@ -27,15 +29,22 @@ public class LevelManager : MonoBehaviour
 
         if (cases.Count == 0)
         {
-            //WIN
-            print("win");
-            sceneFader.FadeTo(nextLevel);
+            if (!dead)
+            {
+                print("win");
+                sceneFader.FadeTo(nextLevel);
+                dead = true;
+            }
         }
     }
 
     public void Death()
     {
-        Debug.Log("Death...");
-        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+        if (!dead)
+        {
+            Debug.Log("Death...");
+            sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+            dead = true;
+        }
     }
 }
