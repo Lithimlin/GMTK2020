@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
 
     private bool dead = false;
 
-    public AudioClip sound;
+    public AudioClip winSound;
+    public AudioClip deathSound;
 
     AudioSource myAudio;
 
@@ -36,7 +37,7 @@ public class LevelManager : MonoBehaviour
         {
             if (!dead)
             {
-                print("win");
+                myAudio.PlayOneShot(winSound);
                 sceneFader.FadeTo(nextLevel);
                 dead = true;
             }
@@ -47,8 +48,7 @@ public class LevelManager : MonoBehaviour
     {
         if (!dead)
         {
-            Debug.Log("Death...");
-            myAudio.PlayOneShot(sound);
+            myAudio.PlayOneShot(deathSound);
             sceneFader.FadeTo(SceneManager.GetActiveScene().name);
             dead = true;
         }

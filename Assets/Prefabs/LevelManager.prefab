@@ -48,7 +48,8 @@ MonoBehaviour:
   - {fileID: 0}
   sceneFader: {fileID: 0}
   nextLevel: 
-  sound: {fileID: 8300000, guid: 235d49c6201db864085f8bce60965d92, type: 3}
+  winSound: {fileID: 8300000, guid: 39d6f3cb818fc77479489a5b39db69fb, type: 3}
+  deathSound: {fileID: 8300000, guid: 235d49c6201db864085f8bce60965d92, type: 3}
 --- !u!82 &-44086741885163923
 AudioSource:
   m_ObjectHideFlags: 0
