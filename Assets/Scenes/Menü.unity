@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 338034962}
   - component: {fileID: 338034961}
   - component: {fileID: 338034960}
+  - component: {fileID: 338034963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,6 +304,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338034963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338034959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad22f23fe4c50c3478988f61682d9835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 0
 --- !u!1 &339393441
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 8774454041686543135, guid: d633388b59010a74595d623e60ca22a3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d633388b59010a74595d623e60ca22a3, type: 3}
@@ -610,7 +624,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.70980394}
     m_HighlightedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.44705883}
     m_PressedColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0.44705883}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -806,7 +820,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.70980394}
     m_HighlightedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.44705883}
     m_PressedColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0.44705883}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

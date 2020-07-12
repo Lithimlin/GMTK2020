@@ -7,8 +7,11 @@ public class CrateController : MonoBehaviour
 {
     private Collider2D coll;
     private Rigidbody2D rb;
+    public CameraScript sceneCam;
 
     public float overlap;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +26,19 @@ public class CrateController : MonoBehaviour
         if ((hits.Length > 0) && hits.Any(e => e.tag == "Br4hms")) 
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
         }
         else
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        if(rb.velocity.x < -0.3F || rb.velocity.x > 0.3F || rb.velocity.y < -0.3F || rb.velocity.y > 0.3F)
+        {
+            sceneCam.Shake();
+        }else
+        {
+            sceneCam.StopShake();
         }
     }
 }
