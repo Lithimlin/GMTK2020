@@ -13,10 +13,13 @@ public class FieldOfViewEditor : Editor
         Handles.DrawWireArc(fov.transform.position, Vector3.forward, Vector3.right, 360, fov.viewRadius);
         Vector3 viewAngleA = fov.DirFromAngle(-fov.viewAngle / 2, false);
         Vector3 viewAngleB = fov.DirFromAngle(fov.viewAngle / 2, false);
-
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleA * fov.viewRadius);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.viewRadius);
-        foreach(Transform visibleTarget in fov.visibleTargets)
+
+        Handles.color = Color.yellow;
+        Handles.DrawWireArc(fov.transform.position + (Vector3)fov.touchRadiusOffset, Vector3.forward, Vector3.right, 360, fov.touchRadius);
+
+        foreach (Transform visibleTarget in fov.visibleTargets)
         {
             Handles.DrawLine(fov.transform.position, visibleTarget.position);
         }
