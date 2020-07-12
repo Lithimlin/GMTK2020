@@ -789,7 +789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &115053267
 Transform:
   m_ObjectHideFlags: 0
@@ -4076,7 +4076,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: -3472991853938201931, guid: cf0137fc39ba5b640b4500264e1029f4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4513,6 +4513,11 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1987276013}
+    - target: {fileID: 1910414407434662995, guid: 5d598a2dcb69f24488ad1942fdff3b1f,
+        type: 3}
+      propertyPath: enableTouch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1910414407434662998, guid: 5d598a2dcb69f24488ad1942fdff3b1f,
         type: 3}
       propertyPath: turnOnly
@@ -5820,7 +5825,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 3740191742173349062, guid: cf0137fc39ba5b640b4500264e1029f4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6538,7 +6543,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -689520407193891599, guid: cf0137fc39ba5b640b4500264e1029f4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8035,6 +8040,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f07f26f5f7f26e9499b17aae7a0802a8, type: 3}
+--- !u!20 &1981355234 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1687968342463013906, guid: f07f26f5f7f26e9499b17aae7a0802a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1981355233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1987276013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2744299819838181040, guid: 00947494016633f49b97a041c6828e68,
@@ -8116,7 +8127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 3740191742173349062, guid: cf0137fc39ba5b640b4500264e1029f4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8371,6 +8382,11 @@ PrefabInstance:
       propertyPath: players.Array.data[1]
       value: 
       objectReference: {fileID: 975594655}
+    - target: {fileID: 3686189646087337777, guid: 00947494016633f49b97a041c6828e68,
+        type: 3}
+      propertyPath: sceneCam
+      value: 
+      objectReference: {fileID: 1981355234}
     - target: {fileID: 4830366625657670277, guid: 00947494016633f49b97a041c6828e68,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -8505,6 +8521,11 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1987276013}
+    - target: {fileID: 6375521699144813003, guid: d70026603658aae43b06492355d01cd6,
+        type: 3}
+      propertyPath: enableTouch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6375521699144813006, guid: d70026603658aae43b06492355d01cd6,
         type: 3}
       propertyPath: waypoints.Array.data[0].x

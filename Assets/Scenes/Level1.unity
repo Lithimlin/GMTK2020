@@ -3434,6 +3434,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 849655824}
+    - target: {fileID: 714399293701540961, guid: 71951b83451385f438082bb9103ab7f1,
+        type: 3}
+      propertyPath: sceneCam
+      value: 
+      objectReference: {fileID: 1687968343915407163}
     - target: {fileID: 714399293701540962, guid: 71951b83451385f438082bb9103ab7f1,
         type: 3}
       propertyPath: m_Name
@@ -6733,6 +6738,11 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 230973924}
+    - target: {fileID: 1910414407434662995, guid: 5d598a2dcb69f24488ad1942fdff3b1f,
+        type: 3}
+      propertyPath: enableTouch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1910414407434662998, guid: 5d598a2dcb69f24488ad1942fdff3b1f,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -6840,3 +6850,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f07f26f5f7f26e9499b17aae7a0802a8, type: 3}
+--- !u!20 &1687968343915407163 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1687968342463013906, guid: f07f26f5f7f26e9499b17aae7a0802a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687968343915407162}
+  m_PrefabAsset: {fileID: 0}

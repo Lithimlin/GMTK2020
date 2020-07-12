@@ -47,3 +47,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   cooldown: 5
+  sceneCam: {fileID: 0}
+  zoomStrengh: 0.5
+  zoomSpeed: 6
+  cooldownBar: {fileID: 0}
+  bar: {fileID: 0}
+  text: {fileID: 0}
+  firstSwitch: 1
