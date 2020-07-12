@@ -2710,7 +2710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &811866417
 Transform:
   m_ObjectHideFlags: 0
@@ -4917,7 +4917,7 @@ PrefabInstance:
     - target: {fileID: 2951807267653895049, guid: 8b0d5b6385a49214f895f3e753e298c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2951807267867542789, guid: 8b0d5b6385a49214f895f3e753e298c5,
         type: 3}
@@ -5807,7 +5807,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.05
   m_Points:
   - {x: 7.003034, y: -1.619097}
   - {x: 7.003034, y: 0.9677546}
@@ -5825,7 +5825,10 @@ EdgeCollider2D:
   - {x: -7.1445704, y: 7.932548}
   - {x: -7.14457, y: 5.8996797}
   - {x: -13.175578, y: 5.89968}
-  - {x: -13.17558, y: -1.6190975}
+  - {x: -13.1735525, y: -1.3177292}
+  - {x: -12.107837, y: -1.3326299}
+  - {x: -12.099908, y: -1.6190975}
+  - {x: -3.1629903, y: -1.6190972}
   - {x: 6.8495994, y: -1.619097}
 --- !u!1 &1527485144
 GameObject:
