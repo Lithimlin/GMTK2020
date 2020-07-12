@@ -76,8 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        Debug.Log("bong! (" + collision.gameObject.name + ")");
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9 && (!(tag == "Br4hms") || (collision.gameObject.tag == "Br4hms" && tag == "Br4hms")))
         {
             dirTransform.right *= -1;
             Debug.Log("Direction flipped");
