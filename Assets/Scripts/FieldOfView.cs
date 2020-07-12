@@ -9,6 +9,7 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
+    public bool enableTouch = true;
     public float touchRadius = .5f;
     public Vector2 touchRadiusOffset;
 
@@ -71,10 +72,13 @@ public class FieldOfView : MonoBehaviour
             }
         }
 
-        Collider2D[] targetTouching = Physics2D.OverlapCircleAll(transform.position + (Vector3) touchRadiusOffset, touchRadius, targetMask);
-        foreach(Collider2D collider in targetTouching)
+        if (enableTouch)
         {
-            visibleTargets.Add(collider.transform);
+            Collider2D[] targetTouching = Physics2D.OverlapCircleAll(transform.position + (Vector3)touchRadiusOffset, touchRadius, targetMask);
+            foreach (Collider2D collider in targetTouching)
+            {
+                visibleTargets.Add(collider.transform);
+            }
         }
     }
 
