@@ -10,8 +10,6 @@ public class MainMenu : MonoBehaviour
     public SceneFader sceneFader;
     public string level1;
 
-    private AudioSource[] allAudioSources;
-
     public void LoadLevelOne()
     {
         sceneFader.FadeTo(level1);
@@ -24,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
-        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        AudioSource[] allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
         if (allAudioSources.Length >= 2)
         {
             Destroy(allAudioSources[0]);
