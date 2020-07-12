@@ -34,7 +34,6 @@ public class EnemyController : MonoBehaviour
         if (fl1pPass)
         {
             GameObject[] passableObjects = GameObject.FindGameObjectsWithTag("Fl1pPass");
-            Debug.Log("Passable: " + passableObjects.Length);
             Collider2D playerCollider = GetComponent<Collider2D>();
             foreach (GameObject obj in passableObjects)
             {
