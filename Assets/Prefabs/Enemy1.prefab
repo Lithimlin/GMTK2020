@@ -189,7 +189,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8596640243658272642, guid: 7ecce1d5fc480f64587b48169a76b737,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.495283, b: 0.7847178, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
     m_Bits: 512
   meshResolution: 0.4
   viewMeshFilter: {fileID: 915059443761067308}
+  manager: {fileID: 0}
   visibleTargets: []
 --- !u!95 &915059444166150907
 Animator:
