@@ -2219,21 +2219,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4812986889060227057, guid: 3a654afa7fba5e44e9ac076a03f611ca,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6556604
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812986889060227057, guid: 3a654afa7fba5e44e9ac076a03f611ca,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.95467263
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812986889060227057, guid: 3a654afa7fba5e44e9ac076a03f611ca,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4812986889060227058, guid: 3a654afa7fba5e44e9ac076a03f611ca,
         type: 3}
       propertyPath: characterManager
