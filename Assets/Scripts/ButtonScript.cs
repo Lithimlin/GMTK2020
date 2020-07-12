@@ -46,7 +46,6 @@ public class ButtonScript : MonoBehaviour
                 }
                 else
                 {
-                    //WIN
                     manager.cases.Remove(gameObject);
                     Destroy(gameObject);
                 }

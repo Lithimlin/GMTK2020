@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -19,6 +18,8 @@ public class FieldOfView : MonoBehaviour
 
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
+
+    public LevelManager manager;
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -39,7 +40,7 @@ public class FieldOfView : MonoBehaviour
             FindVisibleTarget(); 
             if (visibleTargets.Count > 0)
             {
-                //GameOver
+                manager.Death();
             }
         }
     }

@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public int moveSpeed = 6;
     public float idleSpeedFactor = .8f;
     public bool fl1pPass = false;
+    private float flipCooldown = .3f;
+    private float flipTime = 0f;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
         if (fl1pPass)
         {
             GameObject[] passableObjects = GameObject.FindGameObjectsWithTag("Fl1pPass");
+            Debug.Log("Passable: " + passableObjects.Length);
             Collider2D playerCollider = GetComponent<Collider2D>();
             foreach (GameObject obj in passableObjects)
             {
@@ -42,7 +45,10 @@ public class PlayerController : MonoBehaviour
         } 
         else
         {
-            MoveFacing();
+            if(!characterManager.firstSwitch)
+            {
+                MoveFacing();
+            }
         }
     }
 
@@ -62,5 +68,20 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
 
         dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (characterManager.GetActivePlayer() == gameObject && Time.time > flipTime)
+        {
+            return;
+        }
+        Debug.Log("bong! (" + collision.gameObject.name + ")");
+        if (collision.gameObject.layer == 9)
+        {
+            dirTransform.right *= -1;
+            Debug.Log("Direction flipped");
+            flipTime = Time.time + flipCooldown;
+        }
     }
 }
