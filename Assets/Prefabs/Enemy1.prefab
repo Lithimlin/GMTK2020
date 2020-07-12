@@ -280,6 +280,8 @@ MonoBehaviour:
   dirTransform: {fileID: 915059443521794532}
   viewRadius: 4
   viewAngle: 75
+  touchRadius: 0.55
+  touchRadiusOffset: {x: -0.03, y: -0.26}
   targetMask:
     serializedVersion: 2
     m_Bits: 256

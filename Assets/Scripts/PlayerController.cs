@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public int moveSpeed = 6;
     public float idleSpeedFactor = .8f;
     public bool fl1pPass = false;
-    private float flipCooldown = .3f;
+    private float flipCooldown = .5f;
     private float flipTime = 0f;
     
     // Start is called before the first frame update
@@ -72,15 +72,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (characterManager.GetActivePlayer() == gameObject && Time.time > flipTime)
+        flipTime -= Time.deltaTime;
+        if (characterManager.GetActivePlayer() == gameObject && flipTime <= 0)
         {
             return;
         }
-        if (collision.gameObject.layer == 9 && (!(tag == "Br4hms") || (collision.gameObject.tag == "Br4hms" && tag == "Br4hms")))
+        if (collision.gameObject.layer == 9 && (tag != "Br4hms" || collision.gameObject.tag != "Box"))
         {
             dirTransform.right *= -1;
             Debug.Log("Direction flipped");
-            flipTime = Time.time + flipCooldown;
+            flipTime = flipCooldown;
         }
     }
 }
