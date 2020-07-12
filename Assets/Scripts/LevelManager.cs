@@ -6,6 +6,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public List<GameObject> cases = new List<GameObject>();
+
+    public SceneFader sceneFader;
     public string nextLevel;
 
     private void Start()
@@ -20,24 +22,20 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
-            SwitchScene(SceneManager.GetActiveScene().name);
+            sceneFader.FadeTo(SceneManager.GetActiveScene().name);
         }
 
         if (cases.Count == 0)
         {
             //WIN
             print("win");
-            SwitchScene(nextLevel);
+            sceneFader.FadeTo(nextLevel);
         }
     }
 
     public void Death()
     {
         Debug.Log("Death...");
-    }
-
-    private void SwitchScene(string name)
-    {
-        SceneManager.LoadScene(name);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 }
