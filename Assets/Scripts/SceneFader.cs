@@ -23,7 +23,6 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        Debug.Log("FadeIn");
         fader.fillClockwise = false;
         float t = 0f;
 
@@ -31,7 +30,6 @@ public class SceneFader : MonoBehaviour
         {
             t += delta;
             float fill = curve.Evaluate(t);
-            Debug.Log("t: " + t + "; fill: " + fill);
             fader.fillAmount = fill;
             yield return new WaitForSecondsRealtime(delta);
         }

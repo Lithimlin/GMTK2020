@@ -80,7 +80,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == 9 && (tag != "Br4hms" || collision.gameObject.tag != "Box"))
         {
             dirTransform.right *= -1;
-            Debug.Log("Direction flipped");
             flipTime = flipCooldown;
         }
     }
