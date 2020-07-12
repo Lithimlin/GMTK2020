@@ -16,6 +16,14 @@ public class SceneFader : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown("escape"))
+        {
+            FadeTo("Menü");
+        }
+    }
+
     public void FadeTo(string scene)
     {
         StartCoroutine(FadeOut(scene));
