@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour
             StartCoroutine("ShakeC");
         }
         shakeReset = true;
-        transform.localPosition = new Vector3(x, y, startPos.z);
+        transform.localPosition = new Vector3(startPos.x + x,startPos.y + y, startPos.z);
     }
 
     IEnumerator ShakeC()
