@@ -16,8 +16,11 @@ public class FieldOfViewEditor : Editor
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleA * fov.viewRadius);
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.viewRadius);
 
-        Handles.color = Color.yellow;
-        Handles.DrawWireArc(fov.transform.position + (Vector3)fov.touchRadiusOffset, Vector3.forward, Vector3.right, 360, fov.touchRadius);
+        if (fov.enableTouch)
+        {
+            Handles.color = Color.yellow;
+            Handles.DrawWireArc(fov.transform.position + (Vector3)fov.touchRadiusOffset, Vector3.forward, Vector3.right, 360, fov.touchRadius);
+        }
 
         foreach (Transform visibleTarget in fov.visibleTargets)
         {
