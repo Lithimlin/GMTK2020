@@ -3021,6 +3021,11 @@ PrefabInstance:
       propertyPath: overlap
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6359467529121730650, guid: 08a462b3b3b328e4ca8f9796d7347963,
+        type: 3}
+      propertyPath: sceneCam
+      value: 
+      objectReference: {fileID: 1687968343915407164}
     - target: {fileID: 6359467529121730654, guid: 08a462b3b3b328e4ca8f9796d7347963,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6856,3 +6861,15 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1687968343915407162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1687968343915407164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4076091770828445981, guid: f07f26f5f7f26e9499b17aae7a0802a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687968343915407162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad22f23fe4c50c3478988f61682d9835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -203,6 +203,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &16989758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4076091770828445981, guid: f07f26f5f7f26e9499b17aae7a0802a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1981355233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad22f23fe4c50c3478988f61682d9835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &23098632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,7 +802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &115053267
 Transform:
   m_ObjectHideFlags: 0
@@ -5104,6 +5116,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1878190527}
     m_Modifications:
+    - target: {fileID: 6359467529121730650, guid: 08a462b3b3b328e4ca8f9796d7347963,
+        type: 3}
+      propertyPath: sceneCam
+      value: 
+      objectReference: {fileID: 16989758}
     - target: {fileID: 6359467529121730652, guid: 08a462b3b3b328e4ca8f9796d7347963,
         type: 3}
       propertyPath: m_SortingOrder
