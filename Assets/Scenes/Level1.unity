@@ -4824,6 +4824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallFlip
       objectReference: {fileID: 0}
+    - target: {fileID: 539798586590362974, guid: ed7969de074c3b54492b92b79b9285a1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 539798586590362975, guid: ed7969de074c3b54492b92b79b9285a1,
         type: 3}
       propertyPath: m_LocalPosition.x
