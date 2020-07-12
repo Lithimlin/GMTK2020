@@ -6632,6 +6632,11 @@ PrefabInstance:
       propertyPath: cases.Array.data[1]
       value: 
       objectReference: {fileID: 1575040846}
+    - target: {fileID: 2744299819838181040, guid: 00947494016633f49b97a041c6828e68,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 3686189646087337777, guid: 00947494016633f49b97a041c6828e68,
         type: 3}
       propertyPath: players.Array.data[0]
