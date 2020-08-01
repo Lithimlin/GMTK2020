@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6229790674169476355}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7923360468074193800}
   - component: {fileID: 7923360468074193799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpriteSheet_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 7923360468516334500}
   - component: {fileID: 7923360468516334499}
   - component: {fileID: 7923360468516334498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpriteSheet_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
