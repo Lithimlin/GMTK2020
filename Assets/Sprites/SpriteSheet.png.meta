@@ -459,8 +459,8 @@ TextureImporter:
       name: SpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 234
-        y: 467
+        x: 181
+        y: 416
         width: 32
         height: 32
       alignment: 0
@@ -543,8 +543,8 @@ TextureImporter:
       name: SpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 181
-        y: 416
+        x: 234
+        y: 467
         width: 32
         height: 32
       alignment: 0
