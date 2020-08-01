@@ -7,14 +7,15 @@ public class PlayerController : MonoBehaviour
     public Transform dirTransform;
     public CharacterSwitcher characterManager;
     public bool inControl;
+    public GameObject partical;
 
     Rigidbody2D playerBody;
     public int moveSpeed = 6;
     public float idleSpeedFactor = .8f;
     public bool fl1pPass = false;
-    private float flipCooldown = .5f;
     private float flipTime = 0f;
     private bool bounce = true;
+    private bool startPartical;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +41,22 @@ public class PlayerController : MonoBehaviour
     {
         if (characterManager.GetActivePlayer() == gameObject)
         {
+            if (!startPartical)
+            {
+                startPartical = true;
+                partical.SetActive(true);
+                StartCoroutine(stopPartical());
+            }
             UpdateFacing();
             Move();
         } 
         else
         {
-            if(!characterManager.firstSwitch)
+            if (startPartical)
+            {
+                startPartical = false;
+            }
+                if (!characterManager.firstSwitch)
             {
                 MoveFacing();
             }
@@ -92,5 +103,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         bounce = true;
+    }
+
+    IEnumerator stopPartical()
+    {
+        yield return new WaitForSeconds(3);
+        partical.SetActive(false);
     }
 }
