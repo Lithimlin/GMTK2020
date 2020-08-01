@@ -70,17 +70,21 @@ public class EnemyController : MonoBehaviour
         {
             Vector2 target = waypoints[currentPoint];
             Vector2 pos = dirTransform.position;
-            Vector2 faceDir = target - pos;
-            float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
-            dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
             enemyBody.velocity = dirTransform.right * speed;
-            if (((Vector2) dirTransform.position - target).magnitude < .1f)
+
+            if (((Vector2)dirTransform.position - target).magnitude < .1f)
             {
                 enemyBody.velocity = Vector2.zero;
                 wait = true;
                 nextTime = Time.time + waitTime;
                 currentPoint = (currentPoint + 1) % waypoints.Count;
             }
+
+            Vector2 faceDir = target - pos;
+            float angle = Mathf.Atan2(faceDir.y, faceDir.x) * Mathf.Rad2Deg;
+            dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         }
     }
 
