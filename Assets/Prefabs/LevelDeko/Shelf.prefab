@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3133382124956565740}
   - component: {fileID: 4675034949580455828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpriteSheet_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138136762235968623}
   - component: {fileID: 2379248232007979730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8859859833660510045}
   - component: {fileID: 8337683922947149596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpriteSheet_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
