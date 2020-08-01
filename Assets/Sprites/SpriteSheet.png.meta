@@ -543,7 +543,7 @@ TextureImporter:
       name: SpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 234
+        x: 236
         y: 467
         width: 32
         height: 32
@@ -900,7 +900,7 @@ TextureImporter:
       name: SpriteSheet_34
       rect:
         serializedVersion: 2
-        x: 185
+        x: 183
         y: 467
         width: 32
         height: 32
