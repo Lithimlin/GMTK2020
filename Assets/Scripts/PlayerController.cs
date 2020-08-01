@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     public bool fl1pPass = false;
     private float flipCooldown = .5f;
     private float flipTime = 0f;
-    
+    private bool bounce = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class PlayerController : MonoBehaviour
         if (fl1pPass)
         {
             GameObject[] passableObjects = GameObject.FindGameObjectsWithTag("Fl1pPass");
-            Debug.Log("Passable: " + passableObjects.Length);
             Collider2D playerCollider = GetComponent<Collider2D>();
             foreach (GameObject obj in passableObjects)
             {
@@ -70,8 +70,12 @@ public class PlayerController : MonoBehaviour
         dirTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
+        if (!bounce)
+        {
+            return;
+        }
         flipTime -= Time.deltaTime;
         if (characterManager.GetActivePlayer() == gameObject && flipTime <= 0)
         {
@@ -80,7 +84,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == 9 && (tag != "Br4hms" || collision.gameObject.tag != "Box"))
         {
             dirTransform.right *= -1;
-            flipTime = flipCooldown;
+            //flipTime = flipCooldown;
+            bounce = false;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        bounce = true;
     }
 }
