@@ -17,6 +17,7 @@ public class CrateController : MonoBehaviour
     {
         coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     // Update is called once per frame
@@ -41,9 +42,6 @@ public class CrateController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Br4hms"))
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
