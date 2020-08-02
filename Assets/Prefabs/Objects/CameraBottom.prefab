@@ -136,6 +136,7 @@ MonoBehaviour:
   speed: 0
   waitTime: 0
   turnOnly: 1
+  fl1pPass: 0
 --- !u!114 &1910414407434662995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,9 @@ MonoBehaviour:
   dirTransform: {fileID: 1910414408131415887}
   viewRadius: 4
   viewAngle: 75
+  enableTouch: 1
+  touchRadius: 0.1
+  touchRadiusOffset: {x: 0, y: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 256
