@@ -22,23 +22,28 @@ public class CrateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, coll.bounds.size * overlap, transform.eulerAngles.z);
-        if ((hits.Length > 0) && hits.Any(e => e.tag == "Br4hms")) 
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        }
-        else
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-
         if(rb.velocity.x < -0.3F || rb.velocity.x > 0.3F || rb.velocity.y < -0.3F || rb.velocity.y > 0.3F)
         {
             sceneCam.Shake();
         }else
         {
             sceneCam.StopShake();
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Br4hms"))
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Br4hms"))
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 }
