@@ -6,16 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     public Transform dirTransform;
     public CharacterSwitcher characterManager;
-    public bool inControl;
     public GameObject partical;
 
     Rigidbody2D playerBody;
     public int moveSpeed = 6;
     public float idleSpeedFactor = .8f;
+    public float slowSpeedFactor = .5f;
     public bool fl1pPass = false;
-    private float flipTime = 0f;
     private bool bounce = true;
-    private bool startPartical;
+    private bool startParticle;
+    private bool slowMovement = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,20 +41,20 @@ public class PlayerController : MonoBehaviour
     {
         if (characterManager.GetActivePlayer() == gameObject)
         {
-            if (!startPartical)
+            if (!startParticle)
             {
-                startPartical = true;
+                startParticle = true;
                 partical.SetActive(true);
-                StartCoroutine(stopPartical());
+                StartCoroutine(StopParticle());
             }
             UpdateFacing();
             Move();
         } 
         else
         {
-            if (startPartical)
+            if (startParticle)
             {
-                startPartical = false;
+                startParticle = false;
             }
                 if (!characterManager.firstSwitch)
             {
@@ -71,6 +71,10 @@ public class PlayerController : MonoBehaviour
     private void MoveFacing()
     {
         playerBody.velocity = dirTransform.right * moveSpeed * idleSpeedFactor;
+        if(slowMovement)
+        {
+            playerBody.velocity *= slowSpeedFactor;
+        }
     }
 
     private void UpdateFacing()
@@ -83,29 +87,38 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!bounce)
+        if (!bounce || characterManager.GetActivePlayer() == gameObject)
         {
             return;
         }
-        flipTime -= Time.deltaTime;
-        if (characterManager.GetActivePlayer() == gameObject && flipTime <= 0)
-        {
-            return;
-        }
-        if (collision.gameObject.layer == 9 && (tag != "Br4hms" || collision.gameObject.tag != "Box"))
+
+        if ((collision.gameObject.layer == 9 || collision.gameObject.layer == 8) 
+            && ((CompareTag("Br4hms") && !collision.gameObject.CompareTag("Box")) || !CompareTag("Br4hms")))
         {
             dirTransform.right *= -1;
-            //flipTime = flipCooldown;
             bounce = false;
+        }
+        else if (CompareTag("Br4hms") && collision.gameObject.CompareTag("Box"))
+        {
+            if(collision.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < .1f)
+            {
+                dirTransform.right *= -1;
+                bounce = false;
+            }
+            slowMovement = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         bounce = true;
+        if (CompareTag("Br4hms") && collision.gameObject.CompareTag("Box"))
+        {
+            slowMovement = false;
+        }
     }
 
-    IEnumerator stopPartical()
+    IEnumerator StopParticle()
     {
         yield return new WaitForSeconds(3);
         partical.SetActive(false);
