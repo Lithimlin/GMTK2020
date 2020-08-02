@@ -748,7 +748,7 @@ PrefabInstance:
     - target: {fileID: 1687968342463013907, guid: f07f26f5f7f26e9499b17aae7a0802a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 1687968342463013907, guid: f07f26f5f7f26e9499b17aae7a0802a8,
         type: 3}
@@ -5584,6 +5584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallFlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 539798586590362974, guid: ed7969de074c3b54492b92b79b9285a1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 539798586590362975, guid: ed7969de074c3b54492b92b79b9285a1,
         type: 3}
