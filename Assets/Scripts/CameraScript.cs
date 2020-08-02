@@ -18,7 +18,6 @@ public class CameraScript : MonoBehaviour
 
     public void Shake()
     {
-        print(" " + x + " " + y);
         if (!shakeReset)
         {
             StartCoroutine("ShakeC");
